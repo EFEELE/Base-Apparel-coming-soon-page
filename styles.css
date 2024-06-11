@@ -1,0 +1,260 @@
+:root {
+    /* ### Primary */
+
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+
+    /* ### Neutral */
+
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+
+    /* ### Gradients */
+    --gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+    --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%) , hsl(0, 74%, 74%));
+    --gradient3: linear-gradient(135deg, hsl(0, 73%, 91%) , hsl(0, 74%, 82%));
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+/* - Weights: 300, 400, 600 */
+body {
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 4rem;
+}
+main{
+    width: 60%;
+    display: flex;
+    padding-left: 20%;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-position: top, left;
+    background-repeat: no-repeat;
+}
+
+.container{
+    width: 66%;
+ 
+}
+
+h1{
+    color: var(--Desaturated-Red);
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}
+h1 b{
+    font-weight: 600;
+    color: var(--Dark-Grayish-Red);
+}
+
+p {
+    color: var(--Desaturated-Red);
+    width: 100%;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.picture{
+    background-image: url(./images/hero-desktop.jpg);
+    height: 100%;
+    width: 40%;
+    background-size: cover;
+}
+
+input#email {
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: transparent;
+    border: 2px solid var(--Desaturated-Red);
+    padding: 1.2rem 2rem;
+    width: 90%;
+    border-radius: 3rem;
+    font-weight: 400;
+    height: 57px;
+    box-sizing: border-box;
+    
+}
+
+input#email::placeholder {
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    color: var(--Desaturated-Red);
+}
+
+button {
+    border: 0;
+    width: 100px;
+    padding: 1.2rem 2rem;
+    border-radius: 3rem;
+    position: absolute;
+    margin-bottom: 57px;
+    margin-left: -75px;
+    height: 57px;
+    background: var(--gradient2);
+}
+ion-icon {
+    color: var(--Soft-Red);
+    position: absolute;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: -110px;
+    display: none;
+}
+.message-alert{
+    margin: .5rem 2rem;
+    color: var(--Soft-Red);
+    position: absolute;
+    display: none;
+}
+
+.form-group.error + .message-alert{
+    display: block;
+}
+
+
+.form-group.error  .icon {
+    display: inline;
+}
+
+.form-group.error > input{
+    border: 2px solid var(--Soft-Red)!important;
+}
+
+button:hover{
+    transform: scale(1.1);
+    transition: .2s ease;
+    cursor: pointer;
+    box-shadow: 0px 10px 15px #f4383836;
+    background: var(--gradient3);
+
+}
+
+@media screen and (max-width: 1100px) {
+    main{
+        padding-left: 10%;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    input#email{
+        width: 100%;
+    }
+    button{
+        margin-left: -50;
+    }
+    header{
+        width: auto;
+        
+    }
+}
+
+@media screen and (max-width: 800px){
+    body{
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    header{
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        height: 100px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        padding-left: 4rem;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 90%;
+    }
+    .picture{
+        width: 100%;
+        margin-top: 100px;
+        height: 300px;
+        background-image: url(./images/hero-mobile.jpg);
+    }
+    main{
+        background-image: none;
+        background: var(--gradient1);
+        width: 100%;
+        padding-left: 2rem 4rem;
+        justify-content: center;
+    }
+    h1{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width: 800px){
+    main{
+        padding-left: 0%;
+        padding: 0rem 1rem;
+        padding-bottom: 6rem;
+    }
+    h1{
+        font-size: 2.5rem;
+        margin: 4rem 0rem 1.5rem 0rem;
+    }
+    .picture{
+        height: 250px;
+        
+    }
+    p{
+        line-height: 1.5;
+        font-size: .9rem;
+        letter-spacing: 0px;
+    }
+    input#email{
+        margin: 0rem;
+        padding: .8rem 1rem;
+        border: 1px solid var(--Desaturated-Red);
+    }
+    button {
+        margin-left: -70px;
+        width: 70px;
+        box-shadow: 0px 10px 15px #f4383836;
+    }
+    .form-group{
+        padding: 3rem 0rem 0rem 0rem;
+    }
+   
+    
+}
